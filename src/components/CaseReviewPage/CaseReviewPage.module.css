@@ -1,0 +1,98 @@
+.layout {
+  display: flex;
+  height: calc(100vh - 52px);
+  gap: 8px;
+  padding: 8px;
+  background: var(--bg-root);
+  overflow: hidden;
+}
+
+/* Left panel */
+.leftPanel {
+  width: 220px;
+  flex-shrink: 0;
+  transition: width var(--transition-slow);
+  overflow: hidden;
+}
+
+.leftCollapsed {
+  width: 44px;
+}
+
+/* Center panel */
+.centerPanel {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.caseHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+
+.caseInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.caseId {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.caseDivider {
+  color: var(--text-muted);
+}
+
+.caseDate {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.priorBadge {
+  font-size: 10px;
+  font-weight: 600;
+  color: #8b5cf6;
+  background: rgba(139,92,246,0.1);
+  border: 1px solid rgba(139,92,246,0.25);
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+}
+
+.caseActions {
+  display: flex;
+  gap: 8px;
+}
+
+.collapseBtn {
+  font-size: 11px;
+  padding: 4px 10px;
+}
+
+.viewerArea {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Right panel */
+.rightPanel {
+  width: 300px;
+  flex-shrink: 0;
+  min-height: 0;
+  overflow: hidden;
+}

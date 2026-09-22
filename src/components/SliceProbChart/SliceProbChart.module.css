@@ -1,0 +1,49 @@
+.wrap {
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  padding: 10px 14px 6px;
+  flex-shrink: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.finding {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-accent);
+}
+
+.peakLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #f59e0b;
+  margin-left: auto;
+}
+
+.svg {
+  width: 100%;
+  height: 90px;
+  overflow: visible;
+}
+
+@keyframes peak-pulse {
+  0%, 100% { r: 3.5; opacity: 1; }
+  50%       { r: 7;   opacity: 0.5; }
+}
+
+.peakPulse {
+  animation: peak-pulse 400ms ease-in-out 3;
+}

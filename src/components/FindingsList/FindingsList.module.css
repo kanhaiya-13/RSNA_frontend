@@ -1,0 +1,187 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.panelTitle {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.reviewProgress {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.listBody {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Finding row */
+.findingRow {
+  padding: 10px 14px 6px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.findingRow:hover { background: var(--bg-hover); }
+.findingRowSelected {
+  background: var(--bg-active) !important;
+  border-left: 3px solid var(--accent);
+  padding-left: 11px;
+}
+.findingRowLow { opacity: 0.6; }
+.findingRowLow:hover { opacity: 1; }
+
+.findingMain {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.findingInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.findingName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.seriesLabels {
+  display: flex;
+  gap: 3px;
+}
+
+.seriesChip {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 4px;
+}
+
+.findingBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.findingActions {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+/* Probability bar */
+.probBar {
+  height: 3px;
+  background: var(--bg-input);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.probFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 500ms ease;
+}
+.probFill_high   { background: linear-gradient(90deg, var(--conf-high), #16a34a); }
+.probFill_medium { background: linear-gradient(90deg, var(--conf-medium), #d97706); }
+.probFill_low    { background: var(--conf-low); }
+
+/* Note */
+.noteWrap {
+  padding: 6px 14px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+}
+
+.noteInput {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-family: var(--font-sans);
+  padding: 6px 8px;
+  resize: none;
+  line-height: 1.5;
+}
+.noteInput:focus {
+  outline: none;
+  border-color: var(--border-focus);
+}
+
+.existingNote {
+  padding: 4px 14px 6px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 5px;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--border);
+  background: rgba(245,158,11,0.04);
+}
+
+.noteIcon { flex-shrink: 0; }
+
+/* Footer */
+.footer {
+  padding: 10px 12px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-panel);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerProgress {
+  height: 3px;
+  background: var(--bg-input);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.footerProgressBar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #8b5cf6);
+  border-radius: 2px;
+  transition: width 500ms ease;
+}
