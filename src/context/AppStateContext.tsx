@@ -28,6 +28,7 @@ interface AppContextType {
   updateReportLine: (caseId: string, findingId: string, text: string) => void;
   finalizeReport: (caseId: string) => void;
   isReportFinalized: (caseId: string) => boolean;
+  addUploadedCase: (newCase: Case) => void;
 }
 
 export interface ReportLine {
@@ -137,6 +138,10 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
 
   const isReportFinalized = useCallback((caseId: string) => finalizedReports.has(caseId), [finalizedReports]);
 
+  const addUploadedCase = useCallback((newCase: Case) => {
+    setCases(prev => [newCase, ...prev]);
+  }, []);
+
   return (
     <AppContext.Provider value={{
       currentUser: appState.currentUser,
@@ -155,6 +160,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
       updateReportLine,
       finalizeReport,
       isReportFinalized,
+      addUploadedCase,
     }}>
       {children}
     </AppContext.Provider>

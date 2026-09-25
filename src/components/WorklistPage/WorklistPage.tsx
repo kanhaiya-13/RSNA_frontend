@@ -6,6 +6,7 @@ import { useAppState } from '@/context/AppStateContext';
 import { Case, ConfidenceTier, FindingName, ReadStatus } from '@/data/mockData';
 import { getHighestFinding, countFlaggedFindings } from '@/data/mockData';
 import { ConfidenceBadge, StatusBadge } from '@/components/Badges/Badges';
+import UploadModal from '@/components/UploadModal/UploadModal';
 import styles from './WorklistPage.module.css';
 
 type SortKey = 'urgency' | 'date' | 'flagged';
@@ -30,6 +31,7 @@ export default function WorklistPage() {
   const [filterStatus, setFilterStatus] = useState<ReadStatus | 'all'>('all');
   const [filterTier, setFilterTier] = useState<ConfidenceTier | 'all'>('all');
   const [filterFinding, setFilterFinding] = useState<FindingName | 'all'>('all');
+  const [isUploadOpen, setIsUploadOpen] = useState(false);
 
   const sorted = useMemo(() => {
     let list = [...cases];
@@ -65,11 +67,26 @@ export default function WorklistPage() {
             <span className={styles.sortLabel}>{sortKey}</span>
           </p>
         </div>
-        <div className={styles.docBadge}>
-          <span>👤</span>
-          <span>{currentUser.name}</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <button
+            className="btn btn-primary"
+            onClick={() => setIsUploadOpen(true)}
+            style={{ padding: '8px 16px', gap: '8px' }}
+          >
+            <span>⚡</span>
+            <span>Upload New Scan</span>
+          </button>
+          <div className={styles.docBadge}>
+            <span>👤</span>
+            <span>{currentUser.name}</span>
+          </div>
         </div>
       </div>
+
+      <UploadModal
+        isOpen={isUploadOpen}
+        onClose={() => setIsUploadOpen(false)}
+      />
 
       {/* Filter bar */}
       <div className={styles.filterBar}>
