@@ -16,7 +16,7 @@ export default function TopNav() {
         <div className={styles.left}>
           <Link href="/" className={styles.logo}>
             <span className={styles.logoIcon}>🦴</span>
-            <span className={styles.logoText}>KneeAI <span className={styles.logoSub}>Assist</span></span>
+            <span className={styles.logoText}>KneeSight AI <span className={styles.logoSub}>Assist</span></span>
           </Link>
           <div className={styles.badge}>ResNet-34 · 5-fold · 12 findings</div>
         </div>
